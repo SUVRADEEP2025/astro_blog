@@ -1,0 +1,31 @@
+[tools]
+node = "latest"
+bun = "latest"
+
+[settings]
+experimental = true
+
+[tasks.build]
+run = '''
+bun install
+bun run build
+'''
+description = "Build the project"
+
+[tasks.preview]
+run = "bun run preview"
+description = "Preview the project"
+
+[tasks.deploy]
+run = '''
+mise run build
+'''
+description = "Build for GitHub Pages"
+
+[tasks.start]
+run = "bun run dev"
+description = "Start dev server"
+
+[tasks.install]
+run = "bun install"
+description = "Install dependencies"
